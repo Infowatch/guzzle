@@ -550,6 +550,8 @@ class CurlFactory implements CurlFactoryInterface
                 . 'is that cURL was unable to rewind the body of the request '
                 . 'and subsequent retries resulted in the same error. Turn on '
                 . 'the debug option to see what went wrong. See '
+                // не ошибка так как описывает ошибку php которая проявляется в данном условии
+                // appchecker CWE-798
                 . 'https://bugs.php.net/bug.php?id=47204 for more information.';
             return self::createRejection($easy, $ctx);
         } else {
